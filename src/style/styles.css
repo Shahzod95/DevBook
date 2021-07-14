@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: url("../fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+  }
+  
+  a,
+  a:hover,
+  a:focus {
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .link {
+    color: rgb(73, 148, 245);
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+  .auth {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .auth .sign-img {
+    flex: 1;
+    display: flex;
+    padding: 28px;
+    align-items: center;
+    justify-content: center;
+    background-color: #c9ac8c;
+  }
+  
+  .auth .auth-form {
+    flex: 1;
+    display: flex;
+    padding: 28px;
+    align-items: center;
+    justify-content: center;
+  }
+  .auth-container {
+    padding: 30px 15px;
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-container h1 {
+    color: #000;
+    font-family: "Arial Black", Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .auth-container .auth-form-description {
+    margin-bottom: 20px;
+    font-family: "Arial", Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  
+  .auth-form-description .link {
+    color: rgb(48, 121, 211);
+  }
+  
+  .auth-container .auth-input {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 50px;
+  }
+  
+  .auth-input input {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    padding: 15px 20px;
+    border: 1px solid #b4b4bb;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  .auth-button {
+    margin-top: 17px;
+    height: 46px;
+    border-radius: 23px;
+    color: #fff;
+    font-family: url("../fonts/Roboto-Regular.ttf");
+    letter-spacing: 1px;
+    background: #152540;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #152540;
+    transition: all 0.3s linear;
+  }
+  
+  .auth-button:focus,
+  .auth-button:hover {
+    outline: none;
+    background: #fff;
+    color: #152540;
+  }
