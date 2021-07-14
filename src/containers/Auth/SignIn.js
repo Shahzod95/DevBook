@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import '../../assets/style/styles.css';
 import SignInImg from "../../assets/images/login.svg";
 
 export default function SignIn() {

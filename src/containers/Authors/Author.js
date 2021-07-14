@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import AuthorStyle from './assets/style/AuthorStyle';
+import AuthorImg from '../../assets/images/author.svg';
+import {StyledInput} from '../../assets/style/AuthorStyles';
 
 const Author = () => {
 
@@ -15,7 +16,7 @@ const Author = () => {
     return (
         <div className="author">
             <div className="author-left">
-                <img src="" alt="Author image" />
+                <img src={AuthorImg} alt="Author image" />
                 <h2 className="author-name">Abdulla Avloniy</h2>
                 <button className="upload-button">Upload image</button>
             </div>
@@ -23,35 +24,32 @@ const Author = () => {
             <div className="author-right">
                 <h2>Add author</h2>
                 <form>
-                    <input
+                    <StyledInput
                         type="text"
                         name="firstName"
                         value={state.firstName}
                         className="author-input"
                         placeholder="First name"
                     />
-                    <input
-                        type="text"
+                    <StyledInput                        type="text"
                         name="lastName"
                         value={state.lastName}
                         className="author-input"
                         placeholder="Last name"
                     />
-                    <input
-                        type="date"
+                    <StyledInput                        type="date"
                         name="dateOfBirth"
                         value={state.dateOfBirth}
                         className="author-input"
                         placeholder="Date of birth"
                     />
-                    <input
-                        type="date"
+                    <StyledInput                       type="date"
                         name="dateOfDeath"
                         value={state.dateOfDeath}
                         className="author-input"
                         placeholder="Date of death"
                     />
-                    <input
+                    <StyledInput
                         type="text"
                         name="country"
                         value={state.country}
