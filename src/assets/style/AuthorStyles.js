@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import color from './color';
+
+const {borderColor} = color;
 
 const StyledInput = styled.input`
   background: #FFFFFF;

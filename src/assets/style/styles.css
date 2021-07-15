@@ -1,3 +1,12 @@
+@font-face {
+  font-family: Rotter;
+  src: url("../fonts/RotterburgstylishfreeRegular.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 36.1px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,13 +35,12 @@
   }
   .auth {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
   }
   .auth .sign-img {
     flex: 1;
     display: flex;
-    padding: 28px;
     align-items: center;
     justify-content: center;
     background-color: #c9ac8c;
@@ -41,7 +49,6 @@
   .auth .auth-form {
     flex: 1;
     display: flex;
-    padding: 28px;
     align-items: center;
     justify-content: center;
   }
@@ -111,4 +118,38 @@
     outline: none;
     background: #fff;
     color: #152540;
+  }
+  header{
+    height: 80px;
+    padding: 10px 20px;
+    background-color: #191919;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+  }
+  .navbar__logo {
+    position: absolute;
+    width: 96px;
+    height: 36px;
+    left: 81.33px;
+    top: 22px;
+    font-family: Rotter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 144.4%;
+    color: #C9AC8C;
+  }
+  .navbar {
+    float: right;
+    margin: 10px 350px;
+  }
+  .navbar-link {
+    position: relative;
+    color: #fff;
+    padding: 10px 10px 28px 10px;
+    transition: all .3s linear;
+  }
+
+  .navbar-link:hover {
+    border-bottom: 1px solid #fff;
   }
