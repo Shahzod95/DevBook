@@ -1,18 +1,41 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useCallback, useEffect, useState, useMemo, useRef } from "react";
+import { useHistory, useLocation, useParams, Link } from "react-router-dom";
 import '../../assets/style/styles.css';
 import SignInImg from "../../assets/images/login.svg";
+import Axios from '../../utils/axios';
 
-export default function SignIn() {
+export default function SignIn(props) {
   const [state, setState] = useState({
-    email: "",
-    password: ""
+    email: 'aka@mail.ru',
+    password: '123456',
   });
+  const [errorMsg, setErrorMsg] = useState('');
+  const history = useHistory();
+  const emailRef = useRef();
+  const [visible, setVisible] = useState(null);
 
-  const inputHandler = (e) => {
-    const { value, name } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
+  
+  const handleInputChange = useCallback(e => {
+    const { name, value } = e.target;
+    setState(prevState => ({ ...state, [name]: value }));
+
+  }, [state]);
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await Axios.post('/api/login', state);
+      console.log(data)
+      if (!data.success) {
+        return setErrorMsg(data.msg);
+      }
+      // Store user data and redirect
+      history.push('/')
+    }
+    catch (err) {
+      console.log(err.response);
+    }
+  }
 
   return (
     <div>
@@ -35,9 +58,11 @@ export default function SignIn() {
             <div className="auth-input">
               <input
                 type="email"
+                ref={emailRef}
                 placeholder="Enter email"
                 value={state.email}
-                onChange={inputHandler}
+                onChange={handleInputChange}
+                autoComplete="new-email"
               />
             </div>
 
@@ -46,7 +71,8 @@ export default function SignIn() {
                 type="password"
                 placeholder="Enter password"
                 value={state.email}
-                onChange={inputHandler}
+                onChange={handleInputChange}
+                autoComplete="new-password"
               />
             </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthorImg from '../../assets/images/author.svg';
-import {StyledInput} from '../../assets/style/AuthorStyles';
+import {StyledInput, Img, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../assets/style/AuthorStyles';
 
 const Author = () => {
 
@@ -14,15 +14,16 @@ const Author = () => {
     })
 
     return (
-        <div className="author">
-            <div className="author-left">
-                <img src={AuthorImg} alt="Author image" />
-                <h2 className="author-name">Abdulla Avloniy</h2>
-                <button className="upload-button">Upload image</button>
-            </div>
+        <>
+            <StyledCounter>
+            <AuthorLeft>
+                <Img src={AuthorImg} alt="Author image" />
+                <H2>Ulug'bek xazinasi</H2>
+                <Button>Upload image</Button>
+            </AuthorLeft>
 
-            <div className="author-right">
-                <h2>Add author</h2>
+            <AuthorRight>
+                <Paragraph>Add author</Paragraph>
                 <form>
                     <StyledInput
                         type="text"
@@ -56,13 +57,15 @@ const Author = () => {
                         className="author-input"
                         placeholder="Country"
                     />
-                    <textarea>Bio</textarea>
-
+                    <TextArea placeholder="Bio"></TextArea>
+                    <br />
+                    <Button>Create</Button>
                 </form>
-            </div>
+            </AuthorRight>
 
 
-        </div>
+        </StyledCounter>
+        </>
     );
 }
 
