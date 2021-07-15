@@ -1,10 +1,10 @@
 @font-face {
   font-family: Rotter;
   src: url("../fonts/RotterburgstylishfreeRegular.otf");
-  font-weight: 400;
+  /* font-weight: 400;
   font-style: normal;
   font-size: 25px;
-  line-height: 36.1px;
+  line-height: 36.1px; */
 }
 
 * {
@@ -132,7 +132,7 @@
     height: 36px;
     left: 81.33px;
     top: 22px;
-    font-family: Rotter;
+    font-family: url('../fonts/XanhMono-Regular.ttf');
     font-style: normal;
     font-weight: normal;
     font-size: 25px;

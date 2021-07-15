@@ -31,8 +31,16 @@ const Img = styled.img`
   height:266.19px;
 `;
 
+const Img1 = styled.img`
+  margin:-35px 20px 10px 20px;
+  width:300px;
+  height:482,33px
+`;
+
 const H2 = styled.h2`
   margin:20px 20px 20px -40px;
+  font-family:Arial Black;
+  font-weight:900;
   text-align:center;
 `;
 
@@ -96,4 +104,4 @@ const Button = styled.button`
 `;
 
 
-export { StyledInput, Img, StyledCounter, AuthorLeft, AuthorRight, Paragraph, TextArea, Button, H2 }
+export { StyledInput, Img, Img1, StyledCounter, AuthorLeft, AuthorRight, Paragraph, TextArea, Button, H2 }
