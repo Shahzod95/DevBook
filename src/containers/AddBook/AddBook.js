@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BookImg from '../../assets/images/bookImage.svg';
-import {StyledInput, Img1, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../assets/style/AuthorStyles';
+import {StyledInput, Img1, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../style/AuthorStyles';
 
 const AddBook = () => {
 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import '../../assets/style/styles.css';
+import '../../assets/css/styles.css';
 import SignUpImg from "../../assets/images/registry.svg";
 
 export default function SignUp() {
   const [value, setValue] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     phone: "",
     email: "",
     password: ""
@@ -38,8 +38,9 @@ export default function SignUp() {
             <div className="auth-input">
               <input
                 type="text"
+                name="firstName"
                 placeholder="First name"
-                value={value.firstname}
+                value={value.firstName}
                 onChange={inputHandler}
               />
             </div>
@@ -47,8 +48,9 @@ export default function SignUp() {
             <div className="auth-input">
               <input
                 type="text"
+                name="lastName"
                 placeholder="Last name"
-                value={value.lastname}
+                value={value.lastName}
                 onChange={inputHandler}
               />
             </div>
@@ -56,6 +58,7 @@ export default function SignUp() {
             <div className="auth-input">
               <input
                 type="tel"
+                name="phone"
                 placeholder="Enter phone"
                 value={value.phone}
                 onChange={inputHandler}
@@ -65,6 +68,7 @@ export default function SignUp() {
             <div className="auth-input">
               <input
                 type="email"
+                name="email"
                 placeholder="Enter email"
                 value={value.email}
                 onChange={inputHandler}
@@ -74,6 +78,7 @@ export default function SignUp() {
             <div className="auth-input">
               <input
                 type="password"
+                name="password"
                 placeholder="Enter password"
                 value={value.password}
                 onChange={inputHandler}

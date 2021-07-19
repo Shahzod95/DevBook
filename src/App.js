@@ -7,7 +7,7 @@ import SignUp from "./containers/Auth/SignUp";
 import Author from "./containers/Authors/Author";
 import AddBook from "./containers/AddBook/";
 
-import "./assets/style/styles.css";
+import "./assets/css/styles.css";
 
 export default function App() {
   return (

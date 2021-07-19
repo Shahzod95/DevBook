@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthorImg from '../../assets/images/author.svg';
-import {StyledInput, Img, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../assets/style/AuthorStyles';
+import {StyledInput, Img, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../style/AuthorStyles';
 
 const Author = () => {
 

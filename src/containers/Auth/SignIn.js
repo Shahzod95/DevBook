@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, useMemo, useRef } from "react";
 import { useHistory, useLocation, useParams, Link } from "react-router-dom";
-import '../../assets/style/styles.css';
+import '../../assets/css/styles.css';
 import SignInImg from "../../assets/images/login.svg";
 import Axios from '../../utils/axios';
 

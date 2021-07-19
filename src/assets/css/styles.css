@@ -1,10 +1,7 @@
 @font-face {
   font-family: Rotter;
-  src: url("../fonts/RotterburgstylishfreeRegular.otf");
-  /* font-weight: 400;
-  font-style: normal;
-  font-size: 25px;
-  line-height: 36.1px; */
+  src: url('../fonts/XanhMono-Regular.ttf');
+  /* src: url("../fonts/RotterburgstylishfreeRegular.otf"); */
 }
 
 * {
@@ -132,13 +129,18 @@
     height: 36px;
     left: 81.33px;
     top: 22px;
-    font-family: url('../fonts/XanhMono-Regular.ttf');
+    font-family: Rotter;
+    font-size: 25px;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
     line-height: 144.4%;
     color: #C9AC8C;
+    transition: all .3s linear;
   }
+  
+  .navbar__logo:hover {
+            text-shadow: 0 0 2px #fff;
+        }
   .navbar {
     float: right;
     margin: 10px 350px;
@@ -147,9 +149,11 @@
     position: relative;
     color: #fff;
     padding: 10px 10px 28px 10px;
-    transition: all .3s linear;
+    border-bottom: transparent;
+    transition: all .5s linear;
   }
 
   .navbar-link:hover {
     border-bottom: 1px solid #fff;
+    
   }
