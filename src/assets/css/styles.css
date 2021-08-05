@@ -79,6 +79,7 @@
   }
   
   .auth-container .auth-input {
+    position: relative;
     margin-bottom: 20px;
     width: 100%;
     height: 50px;
@@ -94,28 +95,6 @@
     box-sizing: border-box;
     border-radius: 10px;
   }
-  
-  .auth-button {
-    margin-top: 17px;
-    height: 46px;
-    border-radius: 23px;
-    color: #fff;
-    font-family: url("../fonts/Roboto-Regular.ttf");
-    letter-spacing: 1px;
-    background: #152540;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #152540;
-    transition: all 0.3s linear;
-  }
-  
-  .auth-button:focus,
-  .auth-button:hover {
-    outline: none;
-    background: #fff;
-    color: #152540;
-  }
   header{
     height: 80px;
     padding: 10px 20px;
@@ -130,7 +109,7 @@
     left: 81.33px;
     top: 22px;
     font-family: Rotter;
-    font-size: 25px;
+    font-size: 32px;
     font-style: normal;
     font-weight: normal;
     line-height: 144.4%;
@@ -156,4 +135,15 @@
   .navbar-link:hover {
     border-bottom: 1px solid #fff;
     
+  }
+  
+  .password-visible {
+    position: absolute;
+    right: 8px;
+    border: none;
+    background: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
   }

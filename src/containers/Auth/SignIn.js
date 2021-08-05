@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState, useMemo, useRef } from "react";
 import { useHistory, useLocation, useParams, Link } from "react-router-dom";
 import '../../assets/css/styles.css';
+import {Button} from '../../style/AuthorStyles';
 import SignInImg from "../../assets/images/login.svg";
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/all';
 import Axios from '../../utils/axios';
 
 export default function SignIn(props) {
@@ -14,7 +16,7 @@ export default function SignIn(props) {
   const emailRef = useRef();
   const [visible, setVisible] = useState(null);
 
-  
+
   const handleInputChange = useCallback(e => {
     const { name, value } = e.target;
     setState(prevState => ({ ...state, [name]: value }));
@@ -54,29 +56,38 @@ export default function SignIn(props) {
                 Sign Up
               </Link>
             </p>
+            <form onSubmit={handleSignIn}>
+              <div className="auth-input">
+                <input
+                  type="email"
+                  ref={emailRef}
+                  placeholder="Enter email"
+                  value={state.email}
+                  onChange={handleInputChange}
+                  autoComplete="new-email"
+                />
+              </div>
 
-            <div className="auth-input">
-              <input
-                type="email"
-                ref={emailRef}
-                placeholder="Enter email"
-                value={state.email}
-                onChange={handleInputChange}
-                autoComplete="new-email"
-              />
-            </div>
+              <div className="auth-input">
+                <input
+                  type={visible ? 'text' : 'password'}
+                  placeholder="Enter password"
+                  value={state.password}
+                  onChange={handleInputChange}
+                  autoComplete="new-password"
+                />
+                <button
+                  type="button"
+                  className="password-visible"
+                  onClick={() => setVisible(state => !state)}
+                >
+                  {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                </button>
+              </div>
 
-            <div className="auth-input">
-              <input
-                type="password"
-                placeholder="Enter password"
-                value={state.email}
-                onChange={handleInputChange}
-                autoComplete="new-password"
-              />
-            </div>
 
-            <button className="auth-button"> Next step </button>
+              <Button> Next step </Button>
+            </form>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ const StyledInput = styled.input`
   display:block;
   width:330px;
   height:46px;
-  margin:22px;
+  margin:22px 0;
   padding:5px 20px;
   background: #FFFFFF;
   border: 1px solid ${borderColor};
@@ -65,7 +65,7 @@ const StyledInput = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  margin:10px 20px;
+  margin:10px auto;
   width:330px;
   height:82px;
   padding:5px 20px;  
@@ -89,7 +89,7 @@ const buttonProps = {
 const Button = styled.button`
   width:328px;
   height:46px;
-  margin:20px 20px;
+  margin:20px auto;
   font-size: ${props => props.size ? buttonProps.fontSize[props.size] : buttonProps.fontSize.md};
   padding: ${props => props.size ? buttonProps.padding[props.size] : buttonProps.padding.md};
   background-color:${darkBlue};
