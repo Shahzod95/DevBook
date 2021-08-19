@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState, useMemo, useRef } from "react";
-import { useHistory, useLocation, useParams, Link } from "react-router-dom";
+import React, { useCallback, useEffect, useState, useMemo } from "react";
+import { useHistory, Link } from "react-router-dom";
 import '../../assets/css/styles.css';
 import {Button} from '../../style/AuthorStyles';
 import SignInImg from "../../assets/images/login.svg";
@@ -13,7 +13,6 @@ export default function SignIn(props) {
   });
   const [errorMsg, setErrorMsg] = useState('');
   const history = useHistory();
-  const emailRef = useRef();
   const [visible, setVisible] = useState(null);
 
 
@@ -26,7 +25,7 @@ export default function SignIn(props) {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('/api/login', state);
+      const { data } = await Axios.post('/login', state);
       console.log(data)
       if (!data.success) {
         return setErrorMsg(data.msg);
@@ -38,6 +37,8 @@ export default function SignIn(props) {
       console.log(err.response);
     }
   }
+
+  
 
   return (
     <div>
@@ -60,7 +61,6 @@ export default function SignIn(props) {
               <div className="auth-input">
                 <input
                   type="email"
-                  ref={emailRef}
                   placeholder="Enter email"
                   value={state.email}
                   onChange={handleInputChange}

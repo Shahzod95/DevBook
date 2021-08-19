@@ -1,7 +1,7 @@
 import React from 'react';
-import Authors from '../Authors/Author';
 import Books from '../Books';
 import GlobalContext from '../../context/GlobalContext';
+import Header from '../../components/Header/Header';
 
 export default class Home extends React.PureComponent {
   state = {
@@ -25,6 +25,7 @@ export default class Home extends React.PureComponent {
         }
       }}>
         <div>
+          <Header />
           <h2>Home Page</h2>
           <select name="lang" onChange={(e) => this.handleLanguage(e.target.value)} value={this.state.lang}>
             <option value="uz">Uzbekcha</option>

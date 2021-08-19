@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AuthorImg from '../../assets/images/author.svg';
 import {StyledInput, Img, StyledCounter, AuthorLeft, TextArea, AuthorRight, Paragraph, Button, H2} from '../../style/AuthorStyles';
 
-const Author = () => {
+const AddAuthor = () => {
 
     const [state, setState] = useState({
         firstName:"",
@@ -69,4 +69,4 @@ const Author = () => {
     );
 }
 
-export default Author;
+export default AddAuthor;

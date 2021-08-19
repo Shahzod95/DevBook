@@ -19,6 +19,7 @@ export default function SignUp() {
   });
   const [errors, setErrors] = useState({ type: '', message: '' });
   const [visible, setVisible] = useState(null);
+  const emailRef = useRef();
 
   const inputHandler = (e) => {
     const { value, name } = e.target;
@@ -78,6 +79,8 @@ export default function SignUp() {
             </p>
 
             <form onSubmit={handleSubmit}>
+            <StyledInput type="email" hidden name="email" />
+            <StyledInput type="password" hidden name="password" />
               <div className="auth-input">
                 <input
                   type="text"
@@ -112,6 +115,7 @@ export default function SignUp() {
                 <input
                   type="email"
                   name="email"
+                  ref={emailRef}
                   placeholder="Enter email"
                   value={value.email}
                   onChange={inputHandler}
