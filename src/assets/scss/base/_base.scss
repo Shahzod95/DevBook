@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: $rob;
+  font-weight: 400;
+  color: $text-color;
+  background: $bg-site;
+}
+
+.book-single {
+  ul,
+  li,
+  ol {
+    margin: initial !important;
+    padding: initial !important;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.link {
+  color: #549ff9;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.auto-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.has-error {
+  color: red;
+}
+
+.search-title {
+  font-family: $rob;
+  font-weight: 100;
+  margin: 0 10px;
+}
+
+.pagination {
+  justify-content: center;
+  display: flex;
+  list-style-type: none;
+  user-select: none;
+  .page {
+    &-item {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 16px;
+      color: $text-color;
+      background: transparent;
+      border: 1px solid $primary;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+
+      &.disabled {
+        cursor: default;
+        background: darken($text-color, 70%) !important;
+      }
+
+      &:not(.active) {
+        &:hover {
+          background: $primary;
+        }
+      }
+
+      &.active {
+        color: $text-white;
+        background: darken($primary, 15%);
+      }
+    }
+  }
+}

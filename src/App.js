@@ -1,28 +1,59 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import NavBar from './components/Navbar/NavBar'
-import Home from "./containers/Home";
-import SignIn from "./containers/Auth/SignIn";
-import SignUp from "./containers/Auth/SignUp";
-import AddAuthor from "./containers/AddAuthors";
-import Authors from './containers/Author';
-import AddBook from "./containers/AddBook/";
+import { useSelector } from "react-redux";
 
-import "./assets/css/styles.css";
+// assets
+import "./assets/scss/App.scss";
+
+// Pages
+// import Home from "./pages/Home";
+import Books from "./pages/Books/books";
+import Authors from "./pages/Authors/authors";
+import AddAuthor from "./pages/Authors/AddAuthor";
+import AuthorSingle from "./pages/Authors/AuthorSingle";
+import MyBooks from "./pages/Books/MyBooks";
+import AddBook from "./pages/Books/AddBook";
+import UpdateBook from "./pages/Books/UpdateBook";
+import BookSingle from "./pages/Books/BookSingle";
+import UserSettings from "./pages/UserSettings";
+import NotFound from "./pages/NotFound";
+import SignIn from "./pages/Auth/SignIn";
+import SignUp from "./pages/Auth/SignUp";
+import Navbar from "./components/Navbar";
 
 export default function App() {
+  const { token } = useSelector((state) => state.user);
+  const store = useSelector((state) => state);
+
+  console.log("REDUX STORE:", store);
+
+  if (token) {
+    return (
+      <>
+        <Navbar />
+        <Switch>
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route exact path="/authors" component={Authors} />
+          <Route exact path="/authors/add-author" component={AddAuthor} />
+          <Route exact path="/authors/:id" component={AuthorSingle} />
+          <Route exact path={["/books/my-books", "/"]} component={MyBooks} />
+          <Route exact path="/books" component={Books} />
+          <Route exact path="/books/add-book" component={AddBook} />
+          <Route exact path="/books/update/:id" component={UpdateBook} />
+          <Route exact path="/books/:id" component={BookSingle} />
+          <Route exact path="/user-settings" component={UserSettings} />
+          <Route component={NotFound} />
+        </Switch>
+      </>
+    );
+  }
+
   return (
-    <div className="App">
-      <NavBar />
+    <>
       <Switch>
-        <Route component={Home} exact path={["/", '/books', '/products']} />
-        <Route component={SignIn} exact path="/sign-in" />
-        <Route component={SignUp} exact path="/sign-up" />
-        <Route component={AddAuthor} exact path="/add-author" />
-        <Route component={Authors} exact path="/authors" />
-        <Route component={AddBook} exact path="/add-book" />
+        <Route exact path="/sign-up" component={SignUp} />
         <Route component={SignIn} />
       </Switch>
-    </div>
+    </>
   );
 }

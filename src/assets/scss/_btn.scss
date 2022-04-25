@@ -1,0 +1,62 @@
+.btn {
+  height: 44px;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: $rob700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  font-size: 16px;
+  text-transform: capitalize !important;
+  color: #152540;
+
+  &.btn-darkblue {
+    color: #fff;
+    background: #152540;
+    border: 1px solid #152540;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      background: #fff;
+      color: #152540;
+    }
+
+    &:active {
+      background: #f8f8f8;
+    }
+  }
+  &.btn-delete {
+    box-shadow: 0 0 5px rgba(#000, 0.5);
+    color: #fff;
+    background: red;
+    border: 1px solid red;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      background: #fff;
+      color: red;
+    }
+
+    &:active {
+      background: #f8f8f8;
+    }
+  }
+
+  &-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    row-gap: 10px;
+    margin: 0 auto;
+    .btn {
+      margin: 5px;
+    }
+  }
+}

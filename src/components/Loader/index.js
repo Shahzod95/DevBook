@@ -1,2 +1,2 @@
-import LoaderGrid from './LoaderGrid';
+import LoaderGrid from "./LoaderGrid";
 export default LoaderGrid;
