@@ -20,5 +20,5 @@ ReactDOM.render(
       </PersistGate>
     </Provider>
   </BrowserRouter>,
-  document.getElementById("Ibrokhim")
+  document.getElementById("root")
 );
